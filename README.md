@@ -98,8 +98,3 @@ for den prioriterte backloggen med nye statiske oppgaver, og
 [docs/wave-2-draft-plan.md](docs/wave-2-draft-plan.md) for notater om andre
 pulje.
 
-## Bevisste utelatelser
-
-Discord-velkomstoppgaven og de to opprinnelige live-OSINT-oppgavene er ikke
-med. De var bundet til bestemte eksterne kontoer og en konkret event, og er
-derfor mindre egnet i en generell oppgavesamling.
