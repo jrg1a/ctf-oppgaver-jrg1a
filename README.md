@@ -91,15 +91,7 @@ Kjør hele valideringen:
 ./tools/validate_all.sh
 ```
 
-Se [HOW_TO_TESTE_OPPGAVENE.md](HOW_TO_TESTE_OPPGAVENE.md) for detaljert
-lokal testing og [docs/solution-writeups.md](docs/solution-writeups.md) for
-arrangørwriteups. Se [docs/new-challenge-ideas.md](docs/new-challenge-ideas.md)
-for den prioriterte backloggen med nye statiske oppgaver, og
-[docs/wave-2-draft-plan.md](docs/wave-2-draft-plan.md) for notater om andre
-pulje.
-
-## Bevisste utelatelser
-
-Discord-velkomstoppgaven og de to opprinnelige live-OSINT-oppgavene er ikke
-med. De var bundet til bestemte eksterne kontoer og en konkret event, og er
-derfor mindre egnet i en generell oppgavesamling.
+Se [HOW_TO_TESTE_OPPGAVENE.md](HOW_TO_TESTE_OPPGAVENE.md) for lokal testing,
+[docs/solution-writeups.md](docs/solution-writeups.md) for løsningsforklaringer
+og [docs/new-challenge-ideas.md](docs/new-challenge-ideas.md) for forslag til
+flere oppgaver.

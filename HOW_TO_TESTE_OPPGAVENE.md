@@ -1,9 +1,6 @@
-# How to teste oppgavene lokalt
+# Slik tester du oppgavene lokalt
 
-Denne guiden viser hvordan du kan sette opp, spille gjennom og smoke-teste
-oppgavene lokalt på egen maskin før Teknologidagene.
-
-Målet er todelt:
+Guiden dekker lokalt oppsett, gjennomspilling og kontroll av oppgavene.
 
 - Øve som deltaker, uten å se løsninger.
 - Verifisere som arrangør at artefakter, containere, flagg og releasepakke
@@ -81,7 +78,7 @@ docker run --rm --name ctf-web-01 -p 8080:5000 ctf-web-01
 
 Åpne deretter `http://127.0.0.1:8080`.
 
-## 3. Statisk oppgaver
+## 3. Statiske oppgaver
 
 Disse trenger ikke Docker for å spilles. Les `release/<oppgave>/README.md` og
 jobb med vedleggene.
@@ -317,7 +314,7 @@ python3 challenges/pwn-01-buffer-boden/solver/solve.py REMOTE 127.0.0.1 9999
 Hvis `pwntools` mangler:
 
 ```bash
-pip install -r requirements-organizer.txt
+pip install -r requirements-pwn.txt
 ```
 
 ## 7. Servicekontoen
