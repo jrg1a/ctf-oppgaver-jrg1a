@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordverk — Operatørportalen</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0f1923;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #1a2332;
+      border: 1px solid #2d3748;
+      border-radius: 8px;
+      width: 400px;
+      padding: 40px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.4);
+    }
+    .logo {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .logo h1 {
+      font-size: 15px;
+      letter-spacing: 3px;
+      color: #63b3ed;
+      text-transform: uppercase;
+    }
+    .logo p {
+      font-size: 11px;
+      color: #4a5568;
+      margin-top: 4px;
+    }
+    hr { border: none; border-top: 1px solid #2d3748; margin: 20px 0; }
+    label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #718096;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    input {
+      width: 100%;
+      background: #0f1923;
+      border: 1px solid #2d3748;
+      border-radius: 4px;
+      color: #e2e8f0;
+      font-size: 14px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    input:focus { border-color: #63b3ed; }
+    button {
+      width: 100%;
+      background: #3182ce;
+      border: none;
+      border-radius: 4px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 12px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    button:hover { background: #4299e1; }
+    .error {
+      background: #1a0d0d;
+      border: 1px solid #742a2a;
+      border-left: 3px solid #fc8181;
+      color: #fc8181;
+      font-size: 12px;
+      padding: 10px 14px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+    }
+    .hint {
+      margin-top: 24px;
+      padding: 12px;
+      background: #0f1923;
+      border: 1px solid #2d3748;
+      border-radius: 4px;
+      font-size: 11px;
+      color: #718096;
+    }
+    .hint code { color: #63b3ed; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="logo">
+    <h1>Nordverk</h1>
+    <p>Operatørportalen — Intern tilgang</p>
+  </div>
+
+  <hr>
+
+  {% if error %}
+  <div class="error">{{ error }}</div>
+  {% endif %}
+
+  <form method="POST" action="/login">
+    <label>Brukernavn</label>
+    <input type="text" name="username" placeholder="brukernavn" autocomplete="off" required>
+
+    <label>Passord</label>
+    <input type="password" name="password" placeholder="••••••••" required>
+
+    <button type="submit">Logg inn</button>
+  </form>
+
+  <div class="hint">
+    Gjestekonto for demonstrasjon:<br>
+    Brukernavn: <code>guest</code> &nbsp; Passord: <code>guest</code>
+  </div>
+</div>
+
+<!-- TODO: fjern test-endepunkt /admin før deploy -->
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+# CTFd Challenge Metadata
+# Importer med: CTFd Admin → Challenges → Import
+
+name: "Servicekontoen"
+category: "Linux"
+value: 250
+type: dynamic   # Dynamisk poengsum (synker etter hvert som flere løser)
+
+description: |
+  Nordverk har gitt deg tilgang til en låst servicekonto på en intern
+  Linux-server. Kontoen er ment for enkel feilsøking, men noen har vært litt
+  for generøse med filrettigheter på systemet.
+
+  Flagget ligger ikke i hjemmemappen din. Finn en klassisk Linux privilege
+  escalation og les filen som bare root egentlig skal kunne lese.
+
+  ---
+  Tilgang:
+  ssh ctfplayer@<CHALLENGE_HOST> -p <CHALLENGE_PORT>
+  Passord: ICS_r0ck5!
+  ---
+  Flaggformat: CTF{...}
+
+connection_info: "ssh ctfplayer@{host} -p {port}"
+
+hints:
+  - content: "Ikke alle privilege escalations starter med sudo -l. Se etter SUID-filer."
+    cost: 25
+  - content: "GTFOBins har egne oppskrifter for binærer med SUID-bit."
+    cost: 50
+  - content: "Hvis et SUID-verktøy kan lese en vilkårlig fil, er /root/flag.txt et godt mål."
+    cost: 75
+
+tags:
+  - linux
+  - privesc
+  - suid
+  - gtfobins
+  - ssh
+
+docker:
+  image: "ctf-challenge-04-servicekontoen"
+  port: 22
+
+files: []
+
+flag: "CTF{suid_b4se64_reads_r00t}"

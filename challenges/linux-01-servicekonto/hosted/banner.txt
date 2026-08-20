@@ -1,0 +1,13 @@
+
+  ╔══════════════════════════════════════════════════════════╗
+  ║       NORDVERK – Servicekonto Terminal                ║
+  ║              Intern Linux-vedlikehold                    ║
+  ╠══════════════════════════════════════════════════════════╣
+  ║  ADVARSEL: Kun autorisert personell har tilgang.         ║
+  ║  All aktivitet logges og overvåkes.                      ║
+  ║                                                          ║
+  ║  Du er logget inn med en begrenset servicekonto.         ║
+  ║  Ikke alle lokale verktøy er konfigurert like strengt.   ║
+  ║                                                          ║
+  ║  Les README.txt i hjemmemappen for startpunkter.         ║
+  ╚══════════════════════════════════════════════════════════╝

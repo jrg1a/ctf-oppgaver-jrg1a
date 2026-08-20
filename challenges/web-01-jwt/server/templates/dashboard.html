@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordverk — Dashboard</title>
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:#0f1923; color:#c9d1d9; font-family:'Segoe UI',system-ui,sans-serif; padding:32px; }
+    .topbar {
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:32px; padding-bottom:16px; border-bottom:1px solid #2d3748;
+    }
+    .topbar h1 { font-size:14px; letter-spacing:3px; color:#63b3ed; text-transform:uppercase; }
+    .topbar a { color:#718096; font-size:12px; text-decoration:none; }
+    .topbar a:hover { color:#fc8181; }
+    .welcome {
+      background:#1a2332; border:1px solid #2d3748; border-left:4px solid #63b3ed;
+      border-radius:4px; padding:20px 24px; margin-bottom:24px;
+    }
+    .welcome h2 { color:#e2e8f0; font-size:16px; margin-bottom:4px; }
+    .welcome .role { color:#63b3ed; font-size:12px; letter-spacing:2px; text-transform:uppercase; }
+    .section {
+      background:#1a2332; border:1px solid #2d3748; border-radius:4px; padding:20px 24px; margin-bottom:16px;
+    }
+    .section h3 { color:#e2e8f0; font-size:12px; letter-spacing:2px; margin-bottom:12px; text-transform:uppercase; }
+    .token-box {
+      background:#0f1923; border:1px solid #2d3748; border-radius:4px;
+      padding:12px; font-family:'Courier New',monospace; font-size:11px;
+      color:#a0aec0; word-break:break-all; line-height:1.6;
+    }
+    .info { color:#718096; font-size:11px; margin-top:12px; }
+    .restricted {
+      background:#1a1a0d; border:1px solid #744210; border-left:3px solid #ecc94b;
+      border-radius:4px; padding:16px 20px; margin-bottom:16px;
+    }
+    .restricted h3 { color:#ecc94b; font-size:12px; letter-spacing:2px; margin-bottom:8px; }
+    .restricted p { font-size:12px; color:#a0aec0; }
+    .restricted code { color:#ecc94b; background:#0f1923; padding:2px 6px; border-radius:3px; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Nordverk Operatørportalen</h1>
+  <a href="/logout">Logg ut</a>
+</div>
+
+<div class="welcome">
+  <h2>Velkommen, {{ username }}</h2>
+  <div class="role">Rolle: {{ role }}</div>
+</div>
+
+<div class="restricted">
+  <h3>&#9888; Begrenset tilgang</h3>
+  <p>Din rolle (<code>{{ role }}</code>) gir kun lesetilgang.
+     Admin-panelet krever <code>admin</code>-rolle. Kontakt systemansvarlig for oppgradering.</p>
+</div>
+
+<div class="section">
+  <h3>Din session-token (JWT)</h3>
+  <div class="token-box">{{ raw_token }}</div>
+  <p class="info">
+    Tokenet brukes for autentisering mot alle API-endepunkter.
+    Lagret i <code>session_token</code>-cookien.
+  </p>
+</div>
+
+</body>
+</html>

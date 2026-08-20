@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordverk — Admin</title>
+  <style>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { background:#0f1923; color:#c9d1d9; font-family:'Segoe UI',system-ui,sans-serif; padding:32px; }
+    .topbar {
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:32px; padding-bottom:16px; border-bottom:1px solid #2d3748;
+    }
+    .topbar h1 { font-size:14px; letter-spacing:3px; color:#fc8181; text-transform:uppercase; }
+    .topbar a { color:#718096; font-size:12px; text-decoration:none; }
+    .flag-box {
+      background:#0d1a0d; border:1px solid #276749; border-left:4px solid #48bb78;
+      border-radius:4px; padding:24px 28px; text-align:center;
+    }
+    .flag-box h2 { color:#48bb78; font-size:14px; letter-spacing:2px; margin-bottom:12px; text-transform:uppercase; }
+    .flag-box .flag {
+      font-family:'Courier New',monospace; font-size:22px; color:#e2e8f0;
+      background:#0f1923; border:1px solid #2d3748; border-radius:4px;
+      padding:16px 24px; display:inline-block; letter-spacing:1px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>&#9888; Admin Panel</h1>
+  <a href="/logout">Logg ut</a>
+</div>
+
+<div class="flag-box">
+  <h2>Tilgang godkjent</h2>
+  <div class="flag">{{ flag }}</div>
+</div>
+
+</body>
+</html>

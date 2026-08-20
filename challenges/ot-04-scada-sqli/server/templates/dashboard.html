@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordverk SCADA — Dashboard</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Courier New', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .topbar {
+      background: #161b22;
+      border-bottom: 1px solid #21a25e;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #8b949e;
+    }
+    .topbar .system-id { color: #21a25e; font-weight: bold; letter-spacing: 2px; }
+    .main { flex:1; padding: 40px; }
+    .welcome {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-left: 4px solid #21a25e;
+      border-radius: 4px;
+      padding: 24px 32px;
+      margin-bottom: 32px;
+    }
+    .welcome h2 { color: #e6edf3; font-size: 16px; margin-bottom: 6px; }
+    .welcome .role {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #21a25e;
+      text-transform: uppercase;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      padding: 20px;
+    }
+    .card .label { font-size: 9px; letter-spacing:3px; color:#484f58; text-transform:uppercase; margin-bottom:8px; }
+    .card .value { font-size: 24px; color: #e6edf3; }
+    .card .unit  { font-size: 11px; color: #8b949e; }
+    .card.alarm .value { color: #f0883e; }
+    a.logout {
+      display: inline-block;
+      margin-top: 32px;
+      font-size: 11px;
+      color: #484f58;
+      text-decoration: none;
+    }
+    a.logout:hover { color: #f85149; }
+    .bottombar {
+      background: #161b22;
+      border-top: 1px solid #21363d;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #484f58;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="system-id">&#9632; NORDVERK SCADA v4.2.1</span>
+  <span>&#128100; {{ username }}</span>
+</div>
+
+<div class="main">
+  <div class="welcome">
+    <h2>Velkommen, {{ username }}</h2>
+    <div class="role">&#9632; Rolle: {{ role }}</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Brønntrykk</div>
+      <div class="value">199 <span class="unit">bar</span></div>
+    </div>
+    <div class="card">
+      <div class="label">Temperatur</div>
+      <div class="value">69.1 <span class="unit">°C</span></div>
+    </div>
+    <div class="card">
+      <div class="label">Flowrate</div>
+      <div class="value">50.8 <span class="unit">m³/h</span></div>
+    </div>
+    <div class="card">
+      <div class="label">BOP Status</div>
+      <div class="value" style="font-size:16px;color:#21a25e;">LUKKET &#10003;</div>
+    </div>
+    <div class="card alarm">
+      <div class="label">Aktive alarmer</div>
+      <div class="value">0</div>
+    </div>
+    <div class="card">
+      <div class="label">ESD Status</div>
+      <div class="value" style="font-size:16px;color:#21a25e;">ARMED &#9888;</div>
+    </div>
+  </div>
+
+  <a class="logout" href="/logout">&#9658; Logg ut</a>
+</div>
+
+<div class="bottombar">
+  <span>BOP-CTRL-01 | 10.10.10.5</span>
+  <span>SESSION: AUTHENTICATED</span>
+</div>
+
+</body>
+</html>

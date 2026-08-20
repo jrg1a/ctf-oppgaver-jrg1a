@@ -1,0 +1,7 @@
+VIM REGISTEROPPTAK
+KILDE_REGISTER=q
+REPETISJONER=32
+MAAL_REGISTER=Z
+OPPTAK=/^SPOR<CR>0f|2l"Zyl
+
+Merknad: <CR> betyr Enter i Vims key notation.

@@ -1,0 +1,11 @@
+{
+  "modulus": 2147483647,
+  "leaked_consecutive_outputs": [
+    1508053235,
+    1912275612,
+    1575346710,
+    688414088
+  ],
+  "ciphertext_hex": "373a36d04fabfd952688321e52b18c4271da71bb117bc0f0779e66c72cf12e8206dade8031a1ddb653b61c461197d81e0993765302ad76c65d14b2ff783549df3f403ebb6a31cfaa0d3633bb5f94e45d119279702a017c3512527b722dca8683631b1f260404daf5665a16665537c0fb52",
+  "note": "Outputs after the leaked values were used as XOR keystream, 4 bytes per output, big-endian."
+}

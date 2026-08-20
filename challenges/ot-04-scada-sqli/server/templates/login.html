@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Nordverk SCADA — HMI Login</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Courier New', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Topbar */
+    .topbar {
+      background: #161b22;
+      border-bottom: 1px solid #21a25e;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #8b949e;
+    }
+    .topbar .system-id { color: #21a25e; font-weight: bold; letter-spacing: 2px; }
+    .topbar .status { display: flex; gap: 16px; }
+    .topbar .dot {
+      display: inline-block; width: 7px; height: 7px;
+      border-radius: 50%; background: #21a25e;
+      animation: blink 2s infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    /* Main */
+    .main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+    }
+
+    .panel {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-top: 3px solid #21a25e;
+      border-radius: 4px;
+      width: 420px;
+      padding: 40px;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .logo .company {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #21a25e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .logo .product {
+      font-size: 22px;
+      font-weight: bold;
+      color: #e6edf3;
+      letter-spacing: 1px;
+    }
+    .logo .version {
+      font-size: 10px;
+      color: #484f58;
+      margin-top: 4px;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #21363d;
+      margin: 24px 0;
+    }
+
+    label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #8b949e;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      background: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 3px;
+      color: #e6edf3;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      outline: none;
+      transition: border-color .2s;
+    }
+    input:focus { border-color: #21a25e; }
+
+    button {
+      width: 100%;
+      background: #21a25e;
+      border: none;
+      border-radius: 3px;
+      color: #0d1117;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      padding: 12px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background .2s;
+      margin-top: 4px;
+    }
+    button:hover { background: #2dbd71; }
+
+    .error {
+      background: #1a0d0d;
+      border: 1px solid #6e3535;
+      border-left: 3px solid #f85149;
+      border-radius: 3px;
+      color: #f85149;
+      font-size: 12px;
+      padding: 10px 14px;
+      margin-bottom: 18px;
+    }
+
+    .footer-info {
+      margin-top: 28px;
+      font-size: 10px;
+      color: #30363d;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* Bottombar */
+    .bottombar {
+      background: #161b22;
+      border-top: 1px solid #21363d;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #484f58;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="system-id">&#9632; NORDVERK SCADA v4.2.1</span>
+  <div class="status">
+    <span><span class="dot"></span> ONLINE</span>
+    <span>PLANT: PLATFORM-B</span>
+    <span>UNIT: BOP-CTRL</span>
+  </div>
+</div>
+
+<div class="main">
+  <div class="panel">
+    <div class="logo">
+      <div class="company">Nordverk AS</div>
+      <div class="product">HMI ACCESS PORTAL</div>
+      <div class="version">Industrial Control System — Restricted Access</div>
+    </div>
+
+    <hr class="divider">
+
+    {% if error %}
+    <div class="error">&#9888; {{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/">
+      <label for="username">Operator ID</label>
+      <input type="text" id="username" name="username"
+             placeholder="brukernavn" autocomplete="off" required>
+
+      <label for="password">Passord</label>
+      <input type="password" id="password" name="password"
+             placeholder="••••••••" required>
+
+      <button type="submit">&#9658; Logg Inn</button>
+    </form>
+
+    <div class="footer-info">
+      Uautorisert tilgang er forbudt og vil bli loggført.<br>
+      Alle handlinger overvåkes av sikkerhetssystemet.<br>
+      § Lov om industriell cybersikkerhet (2024)
+    </div>
+  </div>
+</div>
+
+<div class="bottombar">
+  <span>BOP-CTRL-01 | 10.10.10.5</span>
+  <span>LAST SYNC: 2026-01-14 15:28:11 UTC</span>
+  <span>SESSION: UNAUTHENTICATED</span>
+</div>
+
+</body>
+</html>

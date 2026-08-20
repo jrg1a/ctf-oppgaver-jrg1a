@@ -1,0 +1,47 @@
+# CTF-oppgaver release
+
+Player-facing challenge packages:
+
+- api-01-leverandorregister
+- crypto-01-xor-vakt
+- crypto-02-skiftprotokoll
+- crypto-03-vigenere-beredskap
+- crypto-04-rsa-felles-modulus
+- crypto-05-lcg-sensorstrom
+- crypto-06-raymond-rsa
+- crypto-07-skiftkortene
+- crypto-08-gjenbrukt-nokkelstrom
+- forensics-01-usb-stand
+- forensics-02-mailspor
+- forensics-03-stand-pc
+- forensics-04-brukeragenten
+- forensics-05-glemt-commit
+- forensics-06-klippet-limt
+- forensics-07-tasteloggen
+- forensics-08-slettet-skiftlogg
+- forensics-09-vedlegget-i-pdf
+- linux-01-servicekonto
+- misc-02-velkomststrom
+- misc-03-morse-rele
+- misc-04-tonevalg
+- misc-05-radiovakten
+- misc-06-registersporet
+- network-01-dns-lekkasje
+- network-02-http-basic
+- osint-01-finn-scenen
+- ot-01-modbus-klartekst
+- ot-02-bop-modbus
+- ot-03-mqtt
+- ot-04-scada-sqli
+- ot-05-historian-api
+- password-01-arkivportal
+- pwn-00-retur-vaktbua
+- pwn-01-buffer-boden
+- re-01-pyc
+- re-02-crackme
+- re-03-minivm
+- stego-01-plakat-ekko
+- stego-02-lsb-skilt
+- web-01-jwt
+- web-02-backup-lekkasje
+- web-03-not-your-badge

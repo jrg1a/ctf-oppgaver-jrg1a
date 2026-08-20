@@ -1,0 +1,43 @@
+From: Nordverk Sikkerhet <sikkerhet@nordverk-secure.example>
+To: messe-team@nordverk.local
+Reply-To: support@n0rdverk.example
+Subject: Haster: bekreft konferansetilgang
+Date: Thu, 11 Jun 2026 08:14:22 +0200
+Message-ID: <konferanse-verify-260611@nordverk-secure.example>
+Received: from mail-gw.n0rdverk.example (203.0.113.77) by mx.nordverk.local
+Authentication-Results: mx.nordverk.local; spf=fail
+ smtp.mailfrom=nordverk-secure.example; dkim=none; dmarc=fail
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============8235547864166514603=="
+
+--===============8235547864166514603==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Hei,
+
+Vi må bekrefte tilgangen din til konferanseportalen før dagens sesjoner.
+Se vedlegget for detaljer.
+
+Nordverk Sikkerhet
+
+--===============8235547864166514603==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: attachment; filename="konferanse-login.html"
+MIME-Version: 1.0
+
+<!doctype html>
+<html>
+  <head><meta charset=3D"utf-8"><title>Nordverk Konferanseinnlogging</title><=
+/head>
+  <body>
+    <h1>Bekreft konferansetilgang</h1>
+    <p>Session timeout. Logg inn p=C3=A5 nytt:</p>
+    <a href=3D"https://n0rdverk.example/login?ticket=3DCTF{mail_h3ad3rs_og_m1=
+me}">Fortsett</a>
+    <!-- incident-token: CTF{mail_h3ad3rs_og_m1me} -->
+  </body>
+</html>
+
+--===============8235547864166514603==--

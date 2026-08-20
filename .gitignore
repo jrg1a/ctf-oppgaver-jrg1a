@@ -1,0 +1,10 @@
+.DS_Store
+.nvimlog
+.claude/
+.venv/
+.env
+__pycache__/
+*.py[cod]
+!challenges/re-01-pyc/agent.pyc
+!release/re-01-pyc/agent.pyc
+**/dist/_build/
